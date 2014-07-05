@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "multimonitor", "multimonitor2010.vcxproj", "{FE3980A4-CCA5-40C6-A3F8-7D524DAEDCE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE3980A4-CCA5-40C6-A3F8-7D524DAEDCE5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FE3980A4-CCA5-40C6-A3F8-7D524DAEDCE5}.Debug|Win32.Build.0 = Debug|Win32
+		{FE3980A4-CCA5-40C6-A3F8-7D524DAEDCE5}.Release|Win32.ActiveCfg = Release|Win32
+		{FE3980A4-CCA5-40C6-A3F8-7D524DAEDCE5}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
