@@ -13,7 +13,8 @@ bool getMonitorName(HWND window, std::wstring & deviceName)
 	HMONITOR monitor = MonitorFromWindow(window, MONITOR_DEFAULTTONULL);
 	if (monitor == NULL)
 	{
-		winapiError(L"MonitorFromWindow failed");
+		if (GetLastError() != S_OK)
+			winapiError(L"MonitorFromWindow failed");
 		return false;
 	}
 
@@ -35,18 +36,7 @@ BOOL WINAPI handleWindow(HWND window, LPARAM lparam)
 	if (getMonitorName(window, monitorName) && monitorName == activeMonitorName)
 	{
 		unsigned long styles = GetWindowLong(window, GWL_STYLE);
-		if (styles == 0)
-		{
-			winapiError(L"GetWindowLong(GWL_STYLE) failed");
-			return true;
-		}
-
 		unsigned long exStyles = GetWindowLong(window, GWL_EXSTYLE);
-		if (exStyles == 0)
-		{
-			winapiError(L"GetWindowLong(GWL_EXSTYLE) failed");
-			return true;
-		}
 		
 		if ((styles & WS_VISIBLE) == WS_VISIBLE && (styles & WS_POPUP) == 0 && (exStyles & WS_EX_TOOLWINDOW) == 0)
 		{
