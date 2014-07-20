@@ -1,3 +1,4 @@
+#include <clocale>
 #include <iostream>
 #include <string>
 #include <tchar.h>
@@ -79,6 +80,8 @@ bool program()
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	std::setlocale(LC_ALL, "");
+
 	if (argc != 2 || _tcscmp(argv[1], L"minimize") != 0)
 	{
 		std::wcerr
